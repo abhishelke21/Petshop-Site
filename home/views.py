@@ -4,7 +4,7 @@ from home.models import contact
 from django.shortcuts import render, HttpResponse , redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login, authenticate
 from django.contrib.auth import logout
 
 # Create your views here.
@@ -12,8 +12,8 @@ from django.contrib.auth import logout
 
 def index(request):
     if request.user.is_anonymous:
-       # return redirect('/login')
-     return render(request, "index.html")
+       return redirect('/login')
+   #  return render(request, "index.html")
    
 # return ("This is home page")
 
@@ -62,12 +62,12 @@ def other(request):
 
 def loginuser(request):
     if request.method=="POST":
-        username =request.POST.get('username')
-        password =request.POST.get('password')
-        user = authenticate(username=username, password=password)
-        if user is not None:
-           login(request,user)
-           return redirect('/')
+        username =request.POST['username']
+        password =request.POST['password']
+        User = authenticate(username=username, password=password)
+        if User is not None:
+           login(request, User)
+           return redirect('')
            # A backend authenticated the credentials
         else: 
             return render (request,'login.html')
