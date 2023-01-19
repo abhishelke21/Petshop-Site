@@ -1,0 +1,46 @@
+.dog{
+    
+    background-image: image(static/14.jpg);
+    background-size: cover;
+    
+    
+   
+}
+.cat{
+    
+    background-image: image(static/1.jpg);
+    background-size: cover;
+    
+   
+}
+.birds{
+    pass
+    
+    /* background-image: image(static/10.jpg);
+    background-size: cover;
+    background-color: blueviolet;
+    background-image: url(static/10.jpg); */
+    
+   
+}
+.other{
+    
+    background-image: image(static/14.jpg);
+    background-size: cover;
+    
+   
+}
+.other{
+    
+    background-image: image(static/14.jpg);
+    background-size: cover;
+    
+   
+}
+.other{
+    
+    background-image: image(static/14.jpg);
+    background-size: cover;
+    
+   
+}

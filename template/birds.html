@@ -3,7 +3,21 @@
 {% block title %}Birds {% endblock title %}
 
 {% block body %}
-<div class="fluid-container"><img src="/static/10.jpg" class="d-block w-100" alt="Birds Image"></div>
+<div class="birds" style="background-image: url('static/10.jpg');">
+    <div class="row">
+      {% for i in prop  %}
+      <div class="card" style="width: 18rem;margin:20px; border:1px solid rgb(153, 45, 45) ;">
+        <img class="card-img-top" src=" {{i.imageURL}} ">
+        <div class="card-body">
+            <h4 class="card-title"> {{i.name}} </h4>
+            <h5 class="card-title">₹ {{i.price}}</h5>
+            <p class="card-text"> {{i.desc}} </p>
+            
+        </div><a href="#" class="btn btn-warning">Add to cart</a> <br>
+    </div>
+      {% endfor %}
+    </div>
+</div>
 
 
 {% endblock body %}

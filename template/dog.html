@@ -2,12 +2,30 @@
 
 {% block title %}Dog {% endblock title %}
 
-{% block body %} 
-<h1 style="text-align:center; background-color: rgb(219, 207, 207); padding: 10px;
-margin: 0px;">This is a Dog Section</h1>
 
-<img src="/static/4.jpg" class="d-block w-100" alt="/static/1.jpg"> 
+{% block body %}
 
+<div class="dog" style="background-image: url('static/14.jpg');">
+    <div class="row" >
+        {% for i in prop %}
+        <div class="card" style="width: 18rem; margin:20px; border:1px solid rgb(153, 45, 45) ;">
+            <img src="{{i.imageURL}}"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title">{{i.name}}</h4>
+                <h5 class="card-title">₹ {{i.price}}</h5>
+                <p class="card-text"> {{i.desc}} </p>
+                
+            </div>
+            <a href="#" class="btn btn-warning">Add to cart</a> <br>
+        </div>
+        
+        
+        {% endfor %}
+        
+    </div>
+
+</div>
 
 
 {% endblock body %}
